@@ -24,6 +24,7 @@ $producaoSex= 100;
 
 $metaSemanal = 500;
 $frase = "";
+$diferencaMetaEProducao = 0;
 
 // -----------Processamento---------------
 
@@ -32,20 +33,24 @@ $totalProducaoSemana = $producaoSeg + $producaoTer + $producaoQua + $producaoQui
 
 
 //media de produção diária
-$mediaSemanal = $totalProducaoSemana / 7;
+$mediaSemanal = $totalProducaoSemana / 5;
 
-// Diferença produção e meta 
 
-$diferencaMetaEProducao = $totalProducaoSemana - 500;
+
+
 
 // Bonus
 
-$bonus = ;
+
 
 if($totalProducaoSemana >= 500){
     $frase = "Meta Alcançada";
 } else {
     $frase = "Meta NÃO Alcançada";
+    // Diferença produção e meta 
+    $diferencaMetaEProducao = 500 - $totalProducaoSemana ;
+    var_dump($diferencaMetaEProducao);
+
 }
 ?>
 
@@ -68,7 +73,7 @@ if($totalProducaoSemana >= 500){
 <p> <?php echo ("Média diária de produção" . $mediaSemanal );?> </br></p>
 <p> <?php echo ("Meta semanal de produção" . $metaSemanal );?> </br></p>
 <p> <?php echo ("Diferença entre produção e meta" . $diferencaMetaEProducao );?> </br></p>
-<p> <?php echo ("Bonus" . $bonus );?> </br></p>
+
 <p> <?php echo ("Frase:" . $frase );?> </br></p>
 </body>
 </html>
