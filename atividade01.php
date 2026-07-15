@@ -15,15 +15,38 @@ Exiba todos os resultados calculados.
 */
 
 //Entradas - variáveis
+$nomeFuncionario = "Talita";
+$producaoSeg = 100;
+$producaoTer = 100;
+$producaoQua= 100;
+$producaoQui= 100;
+$producaoSex= 100;
+
+$metaSemanal = 500;
+$frase = "";
+
+// -----------Processamento---------------
+
+//calculo produção semanal
+$totalProducaoSemana = $producaoSeg + $producaoTer + $producaoQua + $producaoQui + $producaoSex ;
 
 
-// Processamento
+//media de produção diária
+$mediaSemanal = $totalProducaoSemana / 7;
 
+// Diferença produção e meta 
 
+$diferencaMetaEProducao = $totalProducaoSemana - 500;
 
+// Bonus
 
+$bonus = ;
 
-
+if($totalProducaoSemana >= 500){
+    $frase = "Meta Alcançada";
+} else {
+    $frase = "Meta NÃO Alcançada";
+}
 ?>
 
 
@@ -37,5 +60,15 @@ Exiba todos os resultados calculados.
 </head>
 <body>
     
+<h2> Calculo</h2>
+
+<p> <?php echo ("Nome Funcionário" . $nomeFuncionario );?> </br></p>
+<p> <?php echo ("Total unidades produzidas na semana" . $totalProducaoSemana );?> </br></p>
+<p> <?php echo ("Total unidades produzidas na semana" . $totalProducaoSemana );?> </br></p>
+<p> <?php echo ("Média diária de produção" . $mediaSemanal );?> </br></p>
+<p> <?php echo ("Meta semanal de produção" . $metaSemanal );?> </br></p>
+<p> <?php echo ("Diferença entre produção e meta" . $diferencaMetaEProducao );?> </br></p>
+<p> <?php echo ("Bonus" . $bonus );?> </br></p>
+<p> <?php echo ("Frase:" . $frase );?> </br></p>
 </body>
 </html>
